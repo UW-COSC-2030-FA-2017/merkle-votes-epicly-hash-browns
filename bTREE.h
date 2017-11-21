@@ -7,13 +7,22 @@ class bTREE
     struct treeNode{
         string data;
         int time;
+        bool issaLeaf;
+        treeNode* left;
+        treeNode* right;
+        
+        
+        
+        
     };
     
 private:
     //some data structure to hold your treeNodes together ...
     //DATASTUCTURE treeNodes tree;
     //any helper private variables you need
-    
+    int count;
+    treeNode* ptr;
+
 public:
     bTREE();
     ~bTREE();
@@ -21,9 +30,9 @@ public:
     int dataInserted();
     int numberOfNodes();
     
-    int insert(string, int);
+    bool insert(string, int);
     
-    int find(string);
+    bool find(string);
     
     string locate(string);
     
