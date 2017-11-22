@@ -72,13 +72,20 @@ string pMT::locateHash(string mhash)
 
 
 
-string pMT::hash_1(string key)
+int pMT::hash_1(string key)
 /**
  * @brief A function that takes in a key and returns a hash of that key using some custom function
  * @param key, a string
  * @return a hash of the key
  */
 {
+        unsigned int h=0;
+        const int len=key.length()/2+1;
+        for (int i=0; i<len;){
+            h=h*i+key[i];
+            i+=2;
+        }
+        return h%33;
 }
 
 string pMT::hash_2(string key)
