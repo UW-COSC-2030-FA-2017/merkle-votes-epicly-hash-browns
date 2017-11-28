@@ -127,16 +127,7 @@ bool operator !=(const pMT& lhs, const pMT& rhs)
     
 }
 
-pMT operator ^=(const pMT& lhs, const pMT& rhs)
-/**
- * @brief XOR between two merkle trees
- * @param lhs, the left hand side of the equality statment
- * @param rhs, the right hand side of the equality statement
- * @return true if not equal, false otherwise
- */
-{
-    
-}
+  
 
 std::ostream& operator <<(std::ostream& out, const pMT& p)
 /**
