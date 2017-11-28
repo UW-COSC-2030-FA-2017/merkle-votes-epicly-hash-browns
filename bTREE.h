@@ -1,4 +1,5 @@
 #pragma once
+
 #include <string>
 using namespace std;
 
@@ -7,18 +8,20 @@ class bTREE
     struct treeNode{
         string data;
         int time;
-        bool issaLeaf();
+        bool issaLeaf;
         treeNode* left;
         treeNode* right;
-   
+        
     };
     
 private:
     //some data structure to hold your treeNodes together ...
     //DATASTUCTURE treeNodes tree;
     //any helper private variables you need
-    int count;
-    treeNode* ptr;
+    int countOfNodes;
+    treeNode* root;
+    treeNode* left;
+    treeNode* right;
 
 public:
     bTREE();
@@ -31,7 +34,7 @@ public:
     
     int find(string);
     
-    string locate(string);
+    string locate(string, string);
     
     
     friend bool operator==(const bTREE& lhs, const bTREE& rhs);
