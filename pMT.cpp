@@ -149,12 +149,3 @@ std::ostream& operator <<(std::ostream& out, const pMT& p)
 }
 
 
-pMT operator ^(const pMT& lhs, const pMT& rhs)
-/**
- * @brief Where do two trees differ
- * @param lhs
- * @param rhs
- * @return a tree comprised of the right hand side tree nodes that are different from the left
- */
-{
-}
