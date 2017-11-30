@@ -5,7 +5,8 @@ using namespace std;
 
 class bTREE
 {
-    struct treeNode{
+protected:
+        struct treeNode{
         string data;
         int time;
         bool issaLeaf;

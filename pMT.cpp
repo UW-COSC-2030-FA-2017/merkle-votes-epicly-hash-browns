@@ -1,5 +1,7 @@
 
 #include "pMT.h"
+#include <iostream>
+#include <string>
 
 pMT::pMT(int hashSelect)
 /**
@@ -27,7 +29,7 @@ int pMT::insert(string vote, int time)
  */
 
 {
-    return 0;
+    
 }
 
 int pMT::find(string vote, int time, int hashSelect)
@@ -40,6 +42,7 @@ int pMT::find(string vote, int time, int hashSelect)
  */
 {
     
+    
 }
 
 int pMT::findHash(string mhash)
@@ -49,6 +52,7 @@ int pMT::findHash(string mhash)
  * @return 0 if not found, else number of opperations required to find the matching hash
  */
 {
+    
 }
 
 
@@ -72,7 +76,7 @@ string pMT::locateHash(string mhash)
 
 
 
-string pMT::hash_1(string key)
+int pMT::hash_1(string key)
 /**
  * @brief A function that takes in a key and returns a hash of that key using some custom function
  * @param key, a string
@@ -85,8 +89,7 @@ string pMT::hash_1(string key)
             h=h*i+key[i];
             i+=2;
         }
-    string s = to_string(h%33);
-    return s;
+        return h%33;
 }
 
 string pMT::hash_2(string key)
@@ -94,25 +97,12 @@ string pMT::hash_2(string key)
  * @brief A function that takes in a key and returns a hash of that key using some custom function
  * @param key, a string
  * @return a hash of the key
- * RSHash from http://www.partow.net/programming/hashfunctions/index.html
  */
 {
     
-        unsigned int b    = 378551;
-        unsigned int a    = 63689;
-        unsigned int hash = 0;
-        
-        for(std::size_t i = 0; i < key.length(); i++)
-        {
-            hash = hash * a + key[i];
-            a    = a * b;
-        }
-    
-    string s = to_string(hash);
-    return s;
     
 }
-
+    
 string pMT::hash_3(string key)
 /**
  * @brief A function that takes in a key and returns a hash of that key using some custom function
@@ -120,6 +110,12 @@ string pMT::hash_3(string key)
  * @return a hash of the key
  */
 {
+    unsigned int val = 0;
+    for(int i = 0; i < key.length(); i++){
+        val +=(unsigned int)(key[i]);
+    }
+        string p = to_string(val);
+    return p;
 }
 
 bool operator ==(const pMT& lhs, const pMT& rhs)
@@ -130,6 +126,11 @@ bool operator ==(const pMT& lhs, const pMT& rhs)
  * @return true if equal, false otherwise
  */
 {
+    if(lhs == rhs){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 bool operator !=(const pMT& lhs, const pMT& rhs)
@@ -139,8 +140,14 @@ bool operator !=(const pMT& lhs, const pMT& rhs)
  * @param rhs, the right hand side of the equality statement
  * @return true if not equal, false otherwise
  */
-{
-}
+
+    {
+        if(lhs != rhs){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
   
 
