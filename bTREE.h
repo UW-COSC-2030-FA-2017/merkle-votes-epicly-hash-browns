@@ -1,10 +1,12 @@
 #pragma once
 
 #include <string>
+#include <queue>
 using namespace std;
 
 class bTREE
 {
+    
 protected:
         struct treeNode{
         string data;
@@ -12,9 +14,12 @@ protected:
         bool issaLeaf;
         treeNode* left;
         treeNode* right;
-        
+            
+
     };
     
+    queue<treeNode*> Qhelp;
+
 private:
     //some data structure to hold your treeNodes together ...
     //DATASTUCTURE treeNodes tree;
