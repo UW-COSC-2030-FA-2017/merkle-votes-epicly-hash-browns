@@ -72,7 +72,7 @@ string pMT::locateHash(string mhash)
 
 
 
-int pMT::hash_1(string key)
+string pMT::hash_1(string key)
 /**
  * @brief A function that takes in a key and returns a hash of that key using some custom function
  * @param key, a string
@@ -80,12 +80,13 @@ int pMT::hash_1(string key)
  */
 {
         unsigned int h=0;
-        const int len=key.length()/2+1;
+        const int len = key.length()/2+1;
         for (int i=0; i<len;){
             h=h*i+key[i];
             i+=2;
         }
-        return h%33;
+    string s = to_string(h%33);
+    return s;
 }
 
 string pMT::hash_2(string key)
@@ -93,8 +94,23 @@ string pMT::hash_2(string key)
  * @brief A function that takes in a key and returns a hash of that key using some custom function
  * @param key, a string
  * @return a hash of the key
+ * RSHash from http://www.partow.net/programming/hashfunctions/index.html
  */
 {
+    
+        unsigned int b    = 378551;
+        unsigned int a    = 63689;
+        unsigned int hash = 0;
+        
+        for(std::size_t i = 0; i < key.length(); i++)
+        {
+            hash = hash * a + key[i];
+            a    = a * b;
+        }
+    
+    string s = to_string(hash);
+    return s;
+    
 }
 
 string pMT::hash_3(string key)
@@ -124,7 +140,6 @@ bool operator !=(const pMT& lhs, const pMT& rhs)
  * @return true if not equal, false otherwise
  */
 {
-    
 }
 
   

@@ -26,7 +26,7 @@ int bTREE::numberOfNodes(){
     return countOfNodes;
 }
 
-int bTREE::insert(string data, int time){
+int bTREE::insert(string data, int time){ //inserts nodes into tree
     queue<treeNode* >Q;
     treeNode* node = new treeNode;
     node->data = data;
