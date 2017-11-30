@@ -10,6 +10,8 @@ pMT::pMT(int hashSelect)
  * @return 
  */
 {
+    bTREE newTree;
+    
 }
 
 pMT::~pMT()
@@ -18,6 +20,7 @@ pMT::~pMT()
  * @return nada
  */
 {
+    
 }
 
 int pMT::insert(string vote, int time)
@@ -53,6 +56,7 @@ int pMT::findHash(string mhash)
  */
 {
     
+    
 }
 
 
@@ -63,6 +67,7 @@ string pMT::locateData(string vote)
  * @return sequence of L's and R's comprising the movement to the leaf node; else return a dot '.'
  */
 {
+    
 }
 
 string pMT::locateHash(string mhash)
@@ -76,7 +81,7 @@ string pMT::locateHash(string mhash)
 
 
 
-int pMT::hash_1(string key)
+string pMT::hash_1(string key)
 /**
  * @brief A function that takes in a key and returns a hash of that key using some custom function
  * @param key, a string
@@ -89,7 +94,9 @@ int pMT::hash_1(string key)
             h=h*i+key[i];
             i+=2;
         }
-        return h%33;
+    string t = to_string(h%33);
+    
+        return t;
 }
 
 string pMT::hash_2(string key)
@@ -99,6 +106,17 @@ string pMT::hash_2(string key)
  * @return a hash of the key
  */
 {
+    unsigned int a = 378551;
+    unsigned int b = 63689;
+    unsigned int hash = 0;
+    
+    for(size_t i = 0; i < key.length(); i++)
+    {
+        hash = hash * a + key[i];
+        a = a * b;
+    }
+    
+    return to_string(hash);
     
     
 }
@@ -126,7 +144,7 @@ bool operator ==(const pMT& lhs, const pMT& rhs)
  * @return true if equal, false otherwise
  */
 {
-    if(lhs == rhs){
+    if(lhs.myMerkle == rhs.myMerkle){
         return true;
     }else{
         return false;
@@ -142,7 +160,7 @@ bool operator !=(const pMT& lhs, const pMT& rhs)
  */
 
     {
-        if(lhs != rhs){
+        if(lhs.myMerkle != rhs.myMerkle){
             return true;
         }else{
             return false;
@@ -150,7 +168,7 @@ bool operator !=(const pMT& lhs, const pMT& rhs)
     }
 
   
-
+// Change to a print function
 std::ostream& operator <<(std::ostream& out, const pMT& p)
 /**
  * @brief Print out a tree
@@ -159,6 +177,7 @@ std::ostream& operator <<(std::ostream& out, const pMT& p)
  * @return a tree to the screen
  */
 {
+    return out;
 }
 
 

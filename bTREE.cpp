@@ -11,7 +11,6 @@
 //look at descriptions in pMT.h for guidance on what you might need for these function to actually do
 bTREE::bTREE(){
     root == NULL;
-    
     int height = 0;
     countOfNodes = 0;
 }
@@ -25,12 +24,13 @@ int bTREE::dataInserted(){
 }
 
 int bTREE::numberOfNodes(){
-    return countOfNodes;
+    int c = 0;
+    
 }
 
 
 int bTREE::insert(string data, int time){
-    queue<treeNode* >Q;
+
     treeNode* node = new treeNode;
     node->data = data;
     node->time = time;
@@ -41,28 +41,22 @@ int bTREE::insert(string data, int time){
         countOfNodes++;
         root = node;
     }
-    while(!Q.empty()){
-        treeNode* temp = Q.front();
-        Q.pop();
-        
+    
+        treeNode* temp = Qhelp.front();
         if (!temp->left){
             temp->left = node;
-            break;
-        }else {
-            Q.push(temp->left);
-        }if(!temp->right){
-            temp->right = node;
-            break;
+            Qhelp.push(node);
+          
         }else{
-            Q.push(temp->right);
-        }
-        
-    }
-    return 0;
+            temp->right = node;
+            Qhelp.push(node);
+            Qhelp.pop();
+}
+    return countOfNodes;
 }
 
 int bTREE::find(string someString){
-    return find(root, someString);
+    return find(someString);
 }
 
 string bTREE::locate(string x, string){
