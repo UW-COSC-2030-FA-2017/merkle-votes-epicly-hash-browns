@@ -39,6 +39,7 @@ public:
     
     int dataInserted();
     int numberOfNodes();
+    postOrderTraverse(treeNode)
     
     int insert(string, int);
     
