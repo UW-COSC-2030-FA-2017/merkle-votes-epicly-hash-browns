@@ -60,9 +60,9 @@ int bTREE::find(string someString){
     return find(someString);
 }
 
-string bTREE::locate(string x, treeNode root, string empty){
-    empty = "";
-    return locate(x, root, empty);
+string bTREE::locate(string data){
+    string move = "";
+    return locate(data, root, move);
 }
 
  bool operator ==(const bTREE& lhs, const bTREE& rhs){

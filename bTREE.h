@@ -27,6 +27,8 @@ private:
     treeNode* root;
     treeNode* left;
     treeNode* right;
+    
+    string locate(string, const treeNode*, string &move);
 
 public:
     bTREE();
@@ -39,7 +41,7 @@ public:
     
     int find(string);
     
-    string locate(string, treeNode, string);
+    string locate(string);
     
     static void postorder( std::vector< short > & traversal,
                           const treeNode * subtree );
