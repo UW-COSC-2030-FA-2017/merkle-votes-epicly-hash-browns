@@ -62,8 +62,12 @@ int pMT::find(string vote, int time, int hashSelect)
  * @return 0 if not found, else number of opperations required to find the matching vote
  */
 {
-    
-    if root
+    int operation = 0;
+    if (1 == (find(vote, time, selectedHash))){
+        return operation++;
+    }else{
+        return operation;
+    }
     
 }
 
