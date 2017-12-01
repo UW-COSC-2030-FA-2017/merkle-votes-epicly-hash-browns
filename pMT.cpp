@@ -194,7 +194,7 @@ std::ostream& operator <<(std::ostream& out, const pMT& p)
  * @param p
  * @return a tree to the screen
  */
-{   out << p.myMerkle;
+{   cout << p.myMerkle;
     return out;
 }
 
