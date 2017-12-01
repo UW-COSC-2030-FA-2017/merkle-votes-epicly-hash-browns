@@ -12,10 +12,10 @@ protected:
         string data;
         int time;
         bool issaLeaf;
+        string hash;
+        short entry;
         treeNode* left;
         treeNode* right;
-            
-
     };
     
     queue<treeNode*> Qhelp;
@@ -42,6 +42,8 @@ public:
     
     string locate(string, string);
     
+    static void postorder( std::vector< short > & traversal,
+                          const treeNode * subtree );
     
     friend bool operator==(const bTREE& lhs, const bTREE& rhs);
     friend bool operator!=(const bTREE& lhs, const bTREE& rhs);
