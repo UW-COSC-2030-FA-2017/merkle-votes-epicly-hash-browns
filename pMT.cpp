@@ -78,7 +78,7 @@ int pMT::findHash(string mhash)
  * @return 0 if not found, else number of opperations required to find the matching hash
  */
 {
-    
+	return myMerkle.locate(vote);
     
 }
 

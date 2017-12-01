@@ -1,7 +1,10 @@
 #pragma once
-
+#ifndef _BTREE_H_
+#define _BTREE_H_
 #include <string>
 #include <queue>
+#include <string>
+#include <vector>
 using namespace std;
 
 class bTREE
@@ -41,7 +44,8 @@ public:
     
     int find(string);
     
-    string locate(string);
+    string locate(string data);
+	string locateBranch(string data);
     
     static void postorder( std::vector< short > & traversal,
                           const treeNode * subtree );
@@ -52,4 +56,4 @@ public:
     friend std::ostream& operator<<(std::ostream& out, const bTREE& p);
     
 };
-
+#endif
