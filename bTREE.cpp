@@ -56,6 +56,23 @@ int bTREE::insert(string data, int time){
     return countOfNodes;
 }
 
+bool bTREE::postOrderTraverse(treeNode * & subtree, string hash, bool &found)
+{
+    if (subtree != NULL)
+    {
+        postOrderTraverse(subtree->left, hash, found);
+        postOrderTraverse(subtree->right, hash, found);
+        if (subtree->data.compare(s) == 0)
+        {
+            counterFind++;
+            found = true;
+        }
+        
+    }
+    
+    return found;
+}
+
 int bTREE::find(string someString){
     return find(someString);
 }
