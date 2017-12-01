@@ -3,8 +3,6 @@
 #include <iostream>
 #include <string>
 
-
-
 pMT::pMT(int hashSelect)
 /**
  * @brief 
@@ -13,7 +11,15 @@ pMT::pMT(int hashSelect)
  */
 {
     bTREE newTree;
+    selectedHash = hashSelect;
     
+    switch(hashSelect){
+        case 1: selectedHash = 1;
+            break;
+        case 2: selectedHash = 2;
+            break;
+        case 3: selectedHash = 3;
+    }
 }
 
 pMT::~pMT()
@@ -34,7 +40,17 @@ int pMT::insert(string vote, int time)
  */
 
 {
+    switch(selectedHash){
+            
+        case 1: myMerkle.insert(hash_1(vote), time);
+            break;
+        case 2: myMerkle.insert(hash_2(vote), time);
+            break;
+        case 3: myMerkle.insert(hash_3(vote), time);
+            break;
+    }
     
+    return myMerkle.dataInserted();
 }
 
 int pMT::find(string vote, int time, int hashSelect)
@@ -47,6 +63,7 @@ int pMT::find(string vote, int time, int hashSelect)
  */
 {
     
+    if root
     
 }
 
@@ -57,7 +74,8 @@ int pMT::findHash(string mhash)
  * @return 0 if not found, else number of opperations required to find the matching hash
  */
 {
-    bTREE::locate(mhash, NULL, NULL);
+    
+    
 }
 
 
@@ -159,7 +177,6 @@ bool operator !=(const pMT& lhs, const pMT& rhs)
  * @param rhs, the right hand side of the equality statement
  * @return true if not equal, false otherwise
  */
-
     {
         if(lhs.myMerkle != rhs.myMerkle){
             return true;
@@ -177,7 +194,7 @@ std::ostream& operator <<(std::ostream& out, const pMT& p)
  * @param p
  * @return a tree to the screen
  */
-{
+{   out << p.myMerkle;
     return out;
 }
 
