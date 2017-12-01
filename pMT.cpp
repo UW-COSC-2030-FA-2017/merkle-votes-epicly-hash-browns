@@ -78,7 +78,7 @@ int pMT::findHash(string mhash)
  * @return 0 if not found, else number of opperations required to find the matching hash
  */
 {
-    
+	return 0;
 }
 
 
@@ -89,7 +89,8 @@ string pMT::locateData(string vote)
  * @return sequence of L's and R's comprising the movement to the leaf node; else return a dot '.'
  */
 {
-    return myMerkle.locate(vote);
+    string dataLocation = myMerkle.locate(vote);
+	return dataLocation;
 }
 
 string pMT::locateHash(string mhash)
@@ -99,6 +100,7 @@ string pMT::locateHash(string mhash)
  * @return sequence of L's and R's comprising the movement to the hash node, ; else return a dot '.'
  */
 {
+	return 0;
 }
 
 

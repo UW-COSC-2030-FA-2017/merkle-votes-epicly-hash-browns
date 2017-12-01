@@ -39,11 +39,11 @@ public:
     
     int dataInserted();
     int numberOfNodes();
-    postOrderTraverse(treeNode)
+	int postOrderTraverse(treeNode);
     
     int insert(string, int);
     
-    int find(string);
+    int find(string data, int data1, int data2);
     
     string locate(string data);
 	string locateBranch(string data);
