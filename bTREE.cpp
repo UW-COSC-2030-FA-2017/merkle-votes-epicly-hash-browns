@@ -28,16 +28,6 @@ int bTREE::numberOfNodes(){
     return c;
 }
 
-void bTREE::postorder( std::vector< short > & traversal,
-                       const treeNode * subtree )
-{
-    if( subtree != NULL )
-    {
-        postorder( traversal, subtree->left );
-        postorder( traversal, subtree->right );
-        traversal.push_back(subtree->entry);
-    }
-}
 
 
 int bTREE::insert(string data, int time){
@@ -70,9 +60,9 @@ int bTREE::find(string someString){
     return find(someString);
 }
 
-string bTREE::locate(string x, string){
-    string empty = " ";
-    return locate(x, empty);
+string bTREE::locate(string x, treeNode root, string empty){
+    empty = "";
+    return locate(x, root, empty);
 }
 
  bool operator ==(const bTREE& lhs, const bTREE& rhs){

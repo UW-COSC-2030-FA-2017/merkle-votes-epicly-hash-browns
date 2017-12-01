@@ -13,7 +13,6 @@ protected:
         int time;
         bool issaLeaf;
         string hash;
-        short entry;
         treeNode* left;
         treeNode* right;
     };
@@ -40,7 +39,7 @@ public:
     
     int find(string);
     
-    string locate(string, string);
+    string locate(string, treeNode, string);
     
     static void postorder( std::vector< short > & traversal,
                           const treeNode * subtree );
