@@ -27,6 +27,7 @@ private:
     //DATASTUCTURE treeNodes tree;
     //any helper private variables you need
     int countOfNodes;
+    int operations;
     treeNode* root;
     treeNode* left;
     treeNode* right;
@@ -40,16 +41,27 @@ public:
     int dataInserted();
     int numberOfNodes();
 <<<<<<< HEAD
+<<<<<<< HEAD
+    
+    int operationsF();
+
     bool postOrderTraverse(treeNode *& subtree, string hash, bool & found);
     
 =======
-	bool postOrderTraverse(treeNode *& subtree, string hash, bool & found);
->>>>>>> master
+
+    bool postOrderTraverse(treeNode *& subtree, string hash, bool & found);
+   
+>>>>>>> 43dd654919b60dca6065cbbbac60c1d50804a3e0
+=======
+
+    bool postOrderTraverse(treeNode *& subtree, string hash, bool & found);
+   
+>>>>>>> 43dd654919b60dca6065cbbbac60c1d50804a3e0
     int insert(string, int);
 
 	
     
-    int find(string, int, int);
+    int find(string);
     
     string locate(string);
 	string locateBranch(string);

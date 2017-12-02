@@ -10,7 +10,7 @@
 
 //look at descriptions in pMT.h for guidance on what you might need for these function to actually do
 bTREE::bTREE(){
-    root == NULL;
+    root = NULL;
     int height = 0;
     countOfNodes = 0;
 }
@@ -28,6 +28,9 @@ int bTREE::numberOfNodes(){
     return c;
 }
 
+int bTREE::operationsF(){
+    return operations;
+}
 
 
 int bTREE::insert(string data, int time){
@@ -65,6 +68,7 @@ bool bTREE::postOrderTraverse(treeNode * & subtree, string hash, bool &exists)
         if (subtree->data.compare(hash) == 0)
         {
             exists = true;
+            operations++;
         }
         
     }
@@ -75,6 +79,7 @@ bool bTREE::postOrderTraverse(treeNode * & subtree, string hash, bool &exists)
 int bTREE::find(string someString){
     
     bool exists = false;
+    operations++;
     return postOrderTraverse(root, someString, exists);
 }
 
@@ -101,3 +106,4 @@ bool operator !=(const bTREE& lhs, const bTREE& rhs){
 
 std::ostream& operator <<(std::ostream& out, const bTREE& p){
 }
+
