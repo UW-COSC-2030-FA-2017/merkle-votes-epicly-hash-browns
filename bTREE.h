@@ -39,17 +39,14 @@ public:
     
     int dataInserted();
     int numberOfNodes();
-<<<<<<< HEAD
+
     bool postOrderTraverse(treeNode *& subtree, string hash, bool & found);
-    
-=======
-	bool postOrderTraverse(treeNode *& subtree, string hash, bool & found);
->>>>>>> master
+   
     int insert(string, int);
 
 	
     
-    int find(string, int, int);
+    int find(string);
     
     string locate(string);
 	string locateBranch(string);
