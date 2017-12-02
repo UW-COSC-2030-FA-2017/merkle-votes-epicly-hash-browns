@@ -22,7 +22,7 @@ public:
 
 	int find(string vote, int time, int hashSelect);
     
-    //int find(string);
+   
     int findHash(string);
     
     string locateData(string data);

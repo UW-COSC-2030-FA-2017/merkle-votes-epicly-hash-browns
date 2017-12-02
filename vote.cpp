@@ -9,7 +9,7 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-    pMT tester(1);
+    pMT comparison(1);
     string data, time;
     ifstream myfile ("my_test.txt");
     if (myfile.is_open())
@@ -19,16 +19,15 @@ int main(int argc, char **argv)
             istringstream buffer(time);
             int time_val = 0;
             buffer >> time_val;
-            cout << tester.insert(data, time_val) << endl;
+            cout << comparison.insert(data, time_val) << endl;
         }
         myfile.close();
     }
     else cout << "Unable to open file";
     
-    cout << "*****************pMT 1*****************************************************"<< endl;
-    cout << tester << endl;
+    cout << comparison << endl;
     
-    pMT tester2(1);
+    pMT comparison2(1);
     string data1, time1;
     ifstream myfile2 ("my_test.txt");
     if (myfile2.is_open())
@@ -38,19 +37,17 @@ int main(int argc, char **argv)
             istringstream buffer(time1);
             int time_val = 0;
             buffer >> time_val;
-            cout << tester2.insert(data1, time_val) << endl;
+            cout << comparison2.insert(data1, time_val) << endl;
         }
         myfile2.close();
     }
     else cout << "Unable to open file";
     
     
-    cout << "*****************pMT 2*****************************************************"<< endl;
-    cout << tester2 << endl;
+    cout << comparison2 << endl;
     
-    cout << "*****************differnece*****************************************************"<< endl;
     
-    cout << (tester ^ tester2) << endl;
+    cout << (comparison ^ comparison2) << endl;
     
     return 0;
 }
