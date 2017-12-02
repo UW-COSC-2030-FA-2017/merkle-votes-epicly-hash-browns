@@ -1,3 +1,13 @@
+/////////////////
+//Robert Michaud
+//Evan Mora 
+//Jeremy Reynolds
+//COSC 2030
+//Final Homework
+//
+/////////////////
+
+
 #include <stdio.h>
 #include "pMT.h"
 #include "bTREE.h"
