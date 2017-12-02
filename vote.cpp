@@ -23,7 +23,7 @@ int main(int argc, char **argv)
         }
         myfile.close();
     }
-    else cout << "Unable to open file";
+    else cout << "File cannot be opened";
     
     cout << comparison << endl;
     
