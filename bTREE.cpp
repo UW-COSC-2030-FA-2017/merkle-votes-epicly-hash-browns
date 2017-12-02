@@ -56,25 +56,26 @@ int bTREE::insert(string data, int time){
     return countOfNodes;
 }
 
-bool bTREE::postOrderTraverse(treeNode * & subtree, string hash, bool &found)
+bool bTREE::postOrderTraverse(treeNode * & subtree, string hash, bool &exists)
 {
     if (subtree != NULL)
     {
-        postOrderTraverse(subtree->left, hash, found);
-        postOrderTraverse(subtree->right, hash, found);
-        if (subtree->data.compare(s) == 0)
+        postOrderTraverse(subtree->left, hash, exists);
+        postOrderTraverse(subtree->right, hash, exists);
+        if (subtree->data.compare(hash) == 0)
         {
-            counterFind++;
-            found = true;
+            exists = true;
         }
         
     }
     
-    return found;
+    return exists;
 }
 
 int bTREE::find(string someString){
-    return find(someString);
+    
+    bool exists = false;
+    return postOrderTraverse(root, someString, exists);
 }
 
 string bTREE::locate(string data){
