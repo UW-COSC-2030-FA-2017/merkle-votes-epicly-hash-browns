@@ -39,9 +39,10 @@ public:
     
     int dataInserted();
     int numberOfNodes();
-	int postOrderTraverse(treeNode);
-    
+	bool postOrderTraverse(treeNode *& subtree, string hash, bool & found);
     int insert(string, int);
+
+	
     
     int find(string data, int data1, int data2);
     
