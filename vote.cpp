@@ -11,37 +11,37 @@ int main(int argc, char **argv)
 {
     pMT comparison(1);
     string data, time;
-    ifstream myfile ("test1.txt");
-    if (myfile.is_open())
+    ifstream issaFile ("test1.txt");
+    if (issaFile.is_open())
     {
-        while ( myfile >> data >> time)
+        while ( issaFile >> data >> time)
         {
             istringstream buffer(time);
             int time_val = 0;
             buffer >> time_val;
             cout << comparison.insert(data, time_val) << endl;
         }
-        myfile.close();
+        issaFile.close();
     }
-    else cout << "Unable to open file";
+    else cout << "Cannot open the file";
     
     cout << comparison << endl;
     
     pMT comparison2(1);
     string data1, time1;
-    ifstream myfile2 ("test1.txt");
-    if (myfile2.is_open())
+    ifstream issaFile2 ("test1.txt");
+    if (issaFile2.is_open())
     {
-        while ( myfile2 >> data1 >> time1)
+        while ( issaFile2 >> data1 >> time1)
         {
             istringstream buffer(time1);
             int time_val = 0;
             buffer >> time_val;
             cout << comparison2.insert(data1, time_val) << endl;
         }
-        myfile2.close();
+        issaFile2.close();
     }
-    else cout << "Unable to open file";
+    else cout << "Cannot open the file";
     
     
     cout << comparison2 << endl;
