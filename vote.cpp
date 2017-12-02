@@ -23,7 +23,8 @@ int main(int argc, char **argv)
         }
         issaFile.close();
     }
-    else cout << "Cannot open the file";
+
+    else cout << "File cannot be opened";
     
     cout << comparison << endl;
     
@@ -41,7 +42,7 @@ int main(int argc, char **argv)
         }
         issaFile2.close();
     }
-    else cout << "Cannot open the file";
+    else cout << "File cannot be opened";
     
     
     cout << comparison2 << endl;
