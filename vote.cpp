@@ -11,7 +11,7 @@ int main(int argc, char **argv)
 {
     pMT comparison(1);
     string data, time;
-    ifstream myfile ("my_test.txt");
+    ifstream myfile ("test1.txt");
     if (myfile.is_open())
     {
         while ( myfile >> data >> time)
@@ -29,7 +29,7 @@ int main(int argc, char **argv)
     
     pMT comparison2(1);
     string data1, time1;
-    ifstream myfile2 ("my_test.txt");
+    ifstream myfile2 ("test1.txt");
     if (myfile2.is_open())
     {
         while ( myfile2 >> data1 >> time1)
