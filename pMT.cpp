@@ -103,7 +103,8 @@ string pMT::locateHash(string mhash)
  * @return sequence of L's and R's comprising the movement to the hash node, ; else return a dot '.'
  */
 {
-	return 0;
+	string hashLocation = myMerkle.locate(mhash);
+	return hashLocation;
 }
 
 
