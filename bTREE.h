@@ -39,14 +39,20 @@ public:
     
     int dataInserted();
     int numberOfNodes();
+<<<<<<< HEAD
     bool postOrderTraverse(treeNode *& subtree, string hash, bool & found);
     
+=======
+	bool postOrderTraverse(treeNode *& subtree, string hash, bool & found);
+>>>>>>> master
     int insert(string, int);
+
+	
     
-    int find(string);
+    int find(string, int, int);
     
-    string locate(string data);
-	string locateBranch(string data);
+    string locate(string);
+	string locateBranch(string);
     
     static void postorder( std::vector< short > & traversal,
                           const treeNode * subtree );

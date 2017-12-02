@@ -9,7 +9,7 @@ private:
     int selectedHash;
     bTREE myMerkle;
     
-    int hash_1(string);
+    string hash_1(string);
     string hash_2(string);
     string hash_3(string);
     
@@ -19,11 +19,14 @@ public:
     
     
     int insert(string, int);
+
+	int find(string vote, int time, int hashSelect);
     
-    int find(string);
+    //int find(string);
     int findHash(string);
     
-    string locate(string);
+    string locateData(string data);
+	string locateHash(string data);
     
     friend bool operator==(const pMT& lhs, const pMT& rhs);
     
