@@ -24,8 +24,8 @@ int bTREE::dataInserted(){
 }
 
 int bTREE::numberOfNodes(){
-    int c = 0;
-    return c;
+    return countOfNodes++;
+    
 }
 
 int bTREE::operationsF(){
@@ -104,6 +104,6 @@ bool operator !=(const bTREE& lhs, const bTREE& rhs){
         }
     }
 
-std::ostream& operator <<(std::ostream& out, const bTREE& p){
-}
+//std::ostream& operator <<(std::ostream& out, const bTREE& p){
+//}
 
