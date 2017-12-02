@@ -131,6 +131,7 @@ string pMT::hash_2(string key)
  * @brief A function that takes in a key and returns a hash of that key using some custom function
  * @param key, a string
  * @return a hash of the key
+ * RSHash from http://www.partow.net/programming/hashfunctions/index.html
  */
 {
     unsigned int a = 378551;
